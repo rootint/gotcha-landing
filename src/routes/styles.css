@@ -1,0 +1,106 @@
+:root {
+	/* --font-body: 'Inter', 'Outfit', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--color-bg-0: #454ade;
+	--color-bg-1: hsl(209, 36%, 86%);
+	--color-bg-2: hsl(224, 44%, 95%);
+	--color-theme-1: #454ade;
+	--color-theme-2: #f64740; */
+	--color-theme-1: #454ade;
+	--color-theme-2: #f64740;
+	--color-text: #fff;
+	/* --column-width: 42rem;
+	--column-margin-top: 4rem;
+	font-family: var(--font-body);
+	color: var(--color-text); */
+	--main-padding: 10%;
+}
+
+/* change paddings! */
+.app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	padding-left: var(--main-padding);
+	margin: 0;
+	padding-top: 0;
+	padding-right: var(--main-padding);
+}
+
+header {
+	position: absolute;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	/* padding: 0 calc(100%-35rem); */
+	padding: 0 var(--main-padding);
+	/* width: 70%; */
+	/* background-color: var(--color-text); */
+}
+
+a.button {
+	display: inline-block;
+	padding: 16px 56px;
+	font-size: 1.5rem;
+	font-weight: 500;
+	font-family: 'Rubik', sans-serif;
+	color: #fff;
+	background-color: black;
+	border: none;
+	border-radius: 16px;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background-color 0.1s ease-in-out;
+}
+
+/* headings */
+h1 {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 500;
+	font-size: 4rem;
+	color: var(--color-text);
+}
+
+h2 {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+	font-size: 2rem;
+	color: var(--color-text);
+}
+
+h3 {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 500;
+	font-size: 1.5rem;
+	color: var(--color-text);
+	padding: 24px 0;
+}
+
+h4 {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+	font-size: 1.2rem;
+	color: var(--color-text);
+}
+
+/* misc */
+body {
+	background: linear-gradient(to bottom right, var(--color-theme-1), var(--color-theme-2));
+	margin: 0;
+	padding: 0;
+}
+
+.centerpadding {
+	flex: 0.05;
+}
+
+/* don't change! */
+main {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+html {
+	padding: 0 !important;
+	margin: 0;
+}
