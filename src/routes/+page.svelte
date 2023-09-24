@@ -4,13 +4,41 @@
 	import CallToAction from './CallToAction.svelte';
 	import Features1 from './Features1.svelte';
 	import Hero1 from './Hero1.svelte';
+
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		const hasBeenHere = localStorage.getItem('hasBeenHere');
+        console.log(hasBeenHere);
+		if (!hasBeenHere) {
+			try {
+				const response = await fetch('https://RNDRandoM.pythonanywhere.com/join', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ name: 'testing1' }) // Modify the data as needed
+				});
+
+				if (response.ok) {
+					const data = await response.json();
+				} else {
+					// Handle error cases
+					console.error('POST request failed');
+				}
+			} catch (error) {
+				console.error('Error:', error);
+			}
+            localStorage.setItem('hasBeenHere', 'true');
+		}
+	});
 </script>
 
 <svelte:head>
 	<title>{NAME}</title>
 	<meta name="description" content={DESCRIPTION} />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
 		rel="stylesheet"

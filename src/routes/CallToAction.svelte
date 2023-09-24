@@ -3,6 +3,10 @@
 
 	export let title: string;
 	export let subtitle: string;
+
+    function send_email() {
+        
+    }
 </script>
 
 <section>
