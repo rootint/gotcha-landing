@@ -7,9 +7,17 @@
 
 	import { onMount } from 'svelte';
 
+	let isMobile = false; // Initialize a variable to store the result
+
 	onMount(async () => {
+		if (window.innerWidth <= 768) {
+			// Adjust the width threshold as needed
+			isMobile = true;
+		} else {
+			isMobile = false;
+		}
 		const hasBeenHere = localStorage.getItem('hasBeenHere');
-        console.log(hasBeenHere);
+		console.log(hasBeenHere);
 		if (!hasBeenHere) {
 			try {
 				const response = await fetch('https://RNDRandoM.pythonanywhere.com/join', {
@@ -29,7 +37,7 @@
 			} catch (error) {
 				console.error('Error:', error);
 			}
-            localStorage.setItem('hasBeenHere', 'true');
+			localStorage.setItem('hasBeenHere', 'true');
 		}
 	});
 </script>
@@ -48,6 +56,7 @@
 <Hero1
 	title="Speak directly to your data."
 	subtitle="Artificial Intelligence-driven data analysis at your fingertips."
+	{isMobile}
 />
 
 <Features1

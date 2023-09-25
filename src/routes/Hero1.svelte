@@ -3,55 +3,57 @@
 
 	export let title: string;
 	export let subtitle: string;
+	export let isMobile: boolean;
 </script>
 
-<section>
-	<div class="herotext">
-		<h1>{title}</h1>
-		<h2>{subtitle}</h2>
+{#if isMobile}
+	<section class="mobile">
+		<h1 class="mobile">{title}</h1>
+		<h2 class="mobile">{subtitle}</h2>
 		<div style="height: 40px" />
-		<a class="button" href="https://forms.gle/UBCinUCT8mbeWmwr6">Request A Demo</a>
-	</div>
-    <div class="centerpadding"/>
-	<div class="heroimage">
-		<p class="background" />
-		<img src="heroimage.png" alt="heroimage" class="herofgimage" />
-	</div>
-</section>
+		<a class="button mobile" href="https://forms.gle/UBCinUCT8mbeWmwr6">Request A Demo</a>
+		<div style="height: 40px" />
+		<img src="heroimage.png" alt="heroimage" class="herofgimage mobile" />
+	</section>
+{:else}
+	<section class="desktop">
+		<div class="herotext">
+			<h1>{title}</h1>
+			<h2>{subtitle}</h2>
+			<div style="height: 40px" />
+			<a class="button" href="https://forms.gle/UBCinUCT8mbeWmwr6">Request A Demo</a>
+		</div>
+		<div class="centerpadding" />
+		<div class="heroimage">
+			<p class="background" />
+			<img src="heroimage.png" alt="heroimage" class="herofgimage" />
+		</div>
+	</section>
+{/if}
 
 <style>
-	section {
+	section.mobile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		padding-top: 80px;
+		width: 100%;
+	}
+
+	section.desktop {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
 		margin: 0;
 		width: 100%;
-		/* background-color: aqua; */
 	}
 
 	p {
 		margin: 0;
 		padding: 0;
-	}
-
-	.mainbutton {
-		display: inline-block;
-		padding: 12px 56px;
-		font-size: 26px;
-		font-weight: 500;
-		font-family: 'InterVariable', sans-serif;
-		color: #fff;
-		/* background-color: var(--color-theme-1); */
-		background: linear-gradient(to bottom right, var(--color-theme-1), var(--color-theme-2));
-		border: none;
-		border-radius: 16px;
-		cursor: pointer;
-		text-decoration: none;
-		transition: background-color 0.1s ease-in-out;
-	}
-	.mainbutton:hover {
-		filter: brightness(70%);
 	}
 
 	.herotext {
@@ -70,7 +72,6 @@
 	}
 
 	.herofgimage {
-		position: absolute;
 		width: 100%;
 		border-radius: 16px;
 		z-index: 1;
