@@ -17,7 +17,7 @@
 				},
 				body: JSON.stringify({ name: 'testing1', email: email }) // Modify the data as needed
 			});
-
+ 
 			if (response.ok) {
 				const data = await response.json();
 				console.log(data);
