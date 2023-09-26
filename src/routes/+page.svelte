@@ -55,7 +55,7 @@
 
 <Hero1
 	title="Get Reels viral now"
-	subtitle="Elevate your videos with our AI Video Analyzer. Upload, get feedback, and watch them go viral!"
+	subtitle="Elevate your videos with GotchaBack. Upload, get feedback, and watch them go viral!"
 	{isMobile}
 />
 
@@ -63,15 +63,15 @@
 	title="Instant Virality Predictions"
 	subtitle="With Gotcha, you can unlock instant predictions using the power of AI. Wondering if your video will go viral? Gotcha's AI can instantly check and let you know. Don't wait for success – predict it with Gotcha!"
 	isImageOnRight={false}
-	imageUrl="heroimage.png"
+	imageSvg='viral.png'
 	{isMobile}
 />
 
 <Features1
 	title="Refine Your Content with Actionable Insights"
-	subtitle="At Gotcha, we go beyond predicting virality; we're here to help you improve your content. Our cutting-edge GotchaBack feature offers in-depth analysis and actionable recommendations to enhance your videos."
+	subtitle="At Gotcha, we go beyond predicting virality; we're here to help you improve your content. Our GotchaBack bot can provide invaluable feedback to make your videos blow up on social platforms."
 	isImageOnRight={true}
-	imageUrl="heroimage.png"
+	imageSvg='insights.png'
 	{isMobile}
 />
 

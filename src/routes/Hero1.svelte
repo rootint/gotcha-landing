@@ -42,7 +42,7 @@
 		<!-- <a class="button mobile" href="https://forms.gle/UBCinUCT8mbeWmwr6">Request A Demo</a> -->
 		<EmailButton {isMobile} />
 		<div style="height: 40px" />
-		<img src="heroimage.png" alt="heroimage" class="herofgimage mobile" />
+		<img src="title.png" alt="heroimage" class="herofgimage mobile" />
 	</section>
 {:else}
 	<section class="desktop">
@@ -62,7 +62,7 @@
 		<div class="centerpadding" />
 		<div class="heroimage">
 			<p class="background" />
-			<img src="heroimage.png" alt="heroimage" class="herofgimage" />
+			<img src="title.png" alt="heroimage" class="herofgimage" />
 		</div>
 	</section>
 
@@ -74,6 +74,9 @@
 {/if}
 
 <style>
+	img.mobile {
+		width: 100%;
+	}
 	.scroll-text {
 		animation: changeWord 2s ease-in infinite;
 		color: black;

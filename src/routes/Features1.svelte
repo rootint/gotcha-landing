@@ -4,8 +4,9 @@
 	export let title: string;
 	export let subtitle: string;
 	export let isImageOnRight: boolean;
-	export let imageUrl: string;
+	// export let imageUrl: string;
 	export let isMobile: boolean;
+	export let imageSvg: string;
 </script>
 
 {#if isMobile}
@@ -15,7 +16,7 @@
 			<h4>{subtitle}</h4>
 		</div>
 		<div style="height: 40px" />
-		<img src={imageUrl} alt="featuresimage" class="herofgimage mobile" />
+		<img src={imageSvg} alt="Feature screenshot" width="90%"/>
 	</section>
 {:else}
 	<section>
@@ -26,11 +27,12 @@
 			</div>
 			<div class="centerpadding" />
 			<div class="featuresimage">
-				<img src={imageUrl} alt="featuresimage" class="herofgimage" />
+				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;"/>
 			</div>
 		{:else}
+			<!-- <div class="featuresimage"> -->
 			<div class="featuresimage">
-				<img src={imageUrl} alt="featuresimage" class="herofgimage" />
+				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;"/>
 			</div>
 			<div class="centerpadding" />
 			<div class="featurestext">
@@ -42,6 +44,14 @@
 {/if}
 
 <style>
+	.svgcontainer svg {
+		width: 150px;
+		height: 150px;
+		/* width: 100%;
+		height: 100%; */
+		z-index: 1; /* Place the SVG above other content */
+	}
+
 	section {
 		padding: 10% 0;
 		display: flex;
