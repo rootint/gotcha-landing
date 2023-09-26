@@ -3,6 +3,7 @@
 
 	export let title: string;
 	export let subtitle: string;
+	export let isMobile: boolean;
 
 	let email = '';
 	let message = '';
@@ -30,17 +31,29 @@
 	};
 </script>
 
-<section>
-	<h1 style="text-align: center">{title}</h1>
-	<h2 style="text-align: center">
-		{subtitle}
-	</h2>
-	<div style="height: 40px" />
-	<input type="text" bind:value={email} placeholder="Email" />
-	<div style="width: 30%;">
+{#if isMobile}
+	<section class="mobile">
+		<h1 style="text-align: center" class="mobile">{title}</h1>
+		<h2 style="text-align: center" class="mobile">
+			{subtitle}
+		</h2>
+		<div style="height: 40px" />
+		<input type="text" bind:value={email} placeholder="Email" />
 		<a class="button" on:click={handleSubmit}>Request A Demo</a>
-	</div>
-</section>
+	</section>
+{:else}
+	<section>
+		<h1 style="text-align: center">{title}</h1>
+		<h2 style="text-align: center">
+			{subtitle}
+		</h2>
+		<div style="height: 40px" />
+		<input type="text" bind:value={email} placeholder="Email" />
+		<div style="width: 30%;">
+			<a class="button" on:click={handleSubmit}>Request A Demo</a>
+		</div>
+	</section>
+{/if}
 
 <style>
 	section {

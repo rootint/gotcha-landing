@@ -64,6 +64,7 @@
 	subtitle="Artificial Intelligence-driven data analysis at your fingertips. Artificial Intelligence-driven data analysis at your fingertips. Artificial Intelligence-driven data analysis at your fingertips.Artificial Intelligence-driven data analysis at your fingertips."
 	isImageOnRight={false}
 	imageUrl="heroimage.png"
+	{isMobile}
 />
 
 <Features1
@@ -71,11 +72,13 @@
 	subtitle="Artificial Intelligence-driven data analysis at your fingertips. Artificial Intelligence-driven data analysis at your fingertips. Artificial Intelligence-driven data analysis at your fingertips.Artificial Intelligence-driven data analysis at your fingertips."
 	isImageOnRight={true}
 	imageUrl="heroimage.png"
+	{isMobile}
 />
 
 <CallToAction
 	title="Speak directly to your data."
 	subtitle="Artificial Intelligence-driven data analysis at your fingertips."
+	{isMobile}
 />
 
 <style>

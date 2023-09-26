@@ -4,33 +4,44 @@
 	export let title: string;
 	export let subtitle: string;
 	export let isImageOnRight: boolean;
-    export let imageUrl: string;
+	export let imageUrl: string;
+	export let isMobile: boolean;
 </script>
 
-<section>
-	{#if isImageOnRight}
+{#if isMobile}
+	<section class="mobile">
 		<div class="featurestext">
 			<h3>{title}</h3>
 			<h4>{subtitle}</h4>
 		</div>
-		<div class="centerpadding" />
-		<div class="featuresimage">
-			<img src={imageUrl} alt="featuresimage" class="herofgimage" />
-		</div>
-	{:else}
-		<div class="featuresimage">
-			<img src={imageUrl} alt="featuresimage" class="herofgimage"/>
-		</div>
-		<div class="centerpadding" />
-		<div class="featurestext">
-			<h3>{title}</h3>
-			<h4>{subtitle}</h4>
-		</div>
-	{/if}
-</section>
+		<div style="height: 40px" />
+		<img src={imageUrl} alt="featuresimage" class="herofgimage mobile" />
+	</section>
+{:else}
+	<section class="desktop">
+		{#if isImageOnRight}
+			<div class="featurestext">
+				<h3>{title}</h3>
+				<h4>{subtitle}</h4>
+			</div>
+			<div class="centerpadding" />
+			<div class="featuresimage">
+				<img src={imageUrl} alt="featuresimage" class="herofgimage" />
+			</div>
+		{:else}
+			<div class="featuresimage">
+				<img src={imageUrl} alt="featuresimage" class="herofgimage" />
+			</div>
+			<div class="centerpadding" />
+			<div class="featurestext">
+				<h3>{title}</h3>
+				<h4>{subtitle}</h4>
+			</div>
+		{/if}
+	</section>
+{/if}
 
 <style>
-    
 	section {
 		padding: 10% 0;
 		display: flex;
@@ -55,7 +66,6 @@
 	}
 
 	.herofgimage {
-		position: absolute;
 		width: 70%;
 		border-radius: 16px;
 		z-index: 1;

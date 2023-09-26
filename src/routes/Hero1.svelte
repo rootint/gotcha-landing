@@ -32,24 +32,10 @@
 {/if}
 
 <style>
-	section.mobile {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		margin: 0;
-		padding-top: 80px;
-		width: 100%;
-	}
-
-	section.desktop {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-		margin: 0;
-		width: 100%;
-	}
+    a.mobile {
+        max-width: 50%;
+        font-size: 1.2rem;
+    }
 
 	p {
 		margin: 0;
