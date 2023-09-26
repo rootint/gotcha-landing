@@ -6,7 +6,8 @@
 <header>
 	<nav>
 		<h4>{NAME}</h4>
-		<a class="button-nav" href="https://forms.gle/UBCinUCT8mbeWmwr6">Request A Demo</a>
+        <h4>Home</h4>
+		<!-- <a class="button-nav" href="https://forms.gle/UBCinUCT8mbeWmwr6">Request A Demo</a> -->
 	</nav>
 </header>
 

@@ -18,7 +18,7 @@
 		<img src={imageUrl} alt="featuresimage" class="herofgimage mobile" />
 	</section>
 {:else}
-	<section class="desktop">
+	<section>
 		{#if isImageOnRight}
 			<div class="featurestext">
 				<h3>{title}</h3>
