@@ -18,7 +18,7 @@
 	</section>
 {:else}
 	<section>
-		<h1 style="text-align: center">{title}</h1>
+		<h1 style="text-align: center; margin-bottom: 20px;">{title}</h1>
 		<h2 style="text-align: center">
 			{subtitle}
 		</h2>

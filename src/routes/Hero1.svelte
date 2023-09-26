@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onDestroy } from 'svelte';
 	import EmailButton from './EmailButton.svelte';
 	import './styles.css';
 
@@ -6,59 +7,37 @@
 	export let subtitle: string;
 	export let isMobile: boolean;
 
-	let email = '';
-	let message = '';
-	let isEmailValid = false;
-	let isPopupVisible = false;
-	let buttonText = 'Request A Demo';
+	let currentWordIndex = 0;
+	const words = ['Shorts', 'Reels', 'Tiktoks']; // List of words to cycle through
 
-	const handleSubmit = async () => {
-		try {
-			buttonText = 'Loading...';
-			const response = await fetch('https://RNDRandoM.pythonanywhere.com/submit', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({ name: 'gotcha', email: email }) // Modify the data as needed
-			});
-			if (response.ok) {
-				const data = await response.json();
-				console.log(data);
-				email = '';
-				// isPopupVisible = true;
-				isEmailValid = false;
-				buttonText = 'Request A Demo';
-				alert('Your email was sent successfully!');
-			} else {
-				// Handle error cases
-				console.error('POST request failed');
-				buttonText = 'Request A Demo';
-				isEmailValid = false;
-				alert("Can't send the email, please try again later.");
-			}
-		} catch (error) {
-			console.error('Error:', error);
-		}
-	};
-
-	// Function to validate the email input
-	function validateEmail() {
-		const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-		isEmailValid = emailRegex.test(email);
+	// Function to update the displayed word
+	function updateWord() {
+		currentWordIndex = (currentWordIndex + 1) % words.length;
 	}
 
-	function closePopup() {
-		isPopupVisible = false;
-	}
+	// Call the updateWord function at a regular interval (e.g., every 3 seconds)
+	const interval = setInterval(updateWord, 2000);
 
-	function doNothing() {}
+	// Cleanup the interval when the component is destroyed
+	onDestroy(() => {
+		clearInterval(interval);
+	});
 </script>
 
 {#if isMobile}
 	<section class="mobile">
-		<h1 class="mobile">{title}</h1>
-		<h2 class="mobile">{subtitle}</h2>
+		<h1 class="mobile" style="margin-bottom: 0;">
+			<div class="herotext">
+				<h1>
+					Go viral with your <p class="scroll-text">
+						{#if currentWordIndex === 0} {words[0]} {/if}
+						{#if currentWordIndex === 1} {words[1]} {/if}
+						{#if currentWordIndex === 2} {words[2]} {/if}
+					</p>
+				</h1>
+			</div>
+		</h1>
+		<h2 class="mobile" style="margin-top: 0;">{subtitle}</h2>
 		<div style="height: 40px" />
 		<!-- <a class="button mobile" href="https://forms.gle/UBCinUCT8mbeWmwr6">Request A Demo</a> -->
 		<EmailButton {isMobile} />
@@ -68,7 +47,14 @@
 {:else}
 	<section class="desktop">
 		<div class="herotext">
-			<h1>{title}</h1>
+			<h1>
+				Go viral with your <p class="scroll-text">
+					{#if currentWordIndex === 0} {words[0]} {/if}
+					{#if currentWordIndex === 1} {words[1]} {/if}
+					{#if currentWordIndex === 2} {words[2]} {/if}
+				</p>
+			</h1>
+
 			<h2>{subtitle}</h2>
 			<div style="height: 40px" />
 			<EmailButton {isMobile} />
@@ -88,6 +74,25 @@
 {/if}
 
 <style>
+	.scroll-text {
+		animation: changeWord 2s ease-in infinite;
+		color: black;
+	}
+
+	@keyframes changeWord {
+		0% {
+			opacity: 0;
+		}
+		33.33% {
+			opacity: 1;
+		}
+		66.66% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
 	section.desktop {
 		display: flex;
 		justify-content: center;
@@ -95,10 +100,6 @@
 		height: 100vh;
 		margin: 0;
 		width: 100%;
-	}
-	a.mobile {
-		max-width: 50%;
-		font-size: 1.2rem;
 	}
 
 	p {

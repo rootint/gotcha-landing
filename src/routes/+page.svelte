@@ -54,30 +54,30 @@
 </svelte:head>
 
 <Hero1
-	title="Speak directly to your data."
-	subtitle="Artificial Intelligence-driven data analysis at your fingertips."
+	title="Get Reels viral now"
+	subtitle="Elevate your videos with our AI Video Analyzer. Upload, get feedback, and watch them go viral!"
 	{isMobile}
 />
 
 <Features1
-	title="Amazing feature 1. Lorem ipsum dolor sit amet blah blah."
-	subtitle="Artificial Intelligence-driven data analysis at your fingertips. Artificial Intelligence-driven data analysis at your fingertips. Artificial Intelligence-driven data analysis at your fingertips.Artificial Intelligence-driven data analysis at your fingertips."
+	title="Instant Virality Predictions"
+	subtitle="With Gotcha, you can unlock instant predictions using the power of AI. Wondering if your video will go viral? Gotcha's AI can instantly check and let you know. Don't wait for success – predict it with Gotcha!"
 	isImageOnRight={false}
 	imageUrl="heroimage.png"
 	{isMobile}
 />
 
 <Features1
-	title="Amazing feature 2. Lorem ipsum dolor sit amet blah blah."
-	subtitle="Artificial Intelligence-driven data analysis at your fingertips. Artificial Intelligence-driven data analysis at your fingertips. Artificial Intelligence-driven data analysis at your fingertips.Artificial Intelligence-driven data analysis at your fingertips."
+	title="Refine Your Content with Actionable Insights"
+	subtitle="At Gotcha, we go beyond predicting virality; we're here to help you improve your content. Our cutting-edge GotchaBack feature offers in-depth analysis and actionable recommendations to enhance your videos."
 	isImageOnRight={true}
 	imageUrl="heroimage.png"
 	{isMobile}
 />
 
 <CallToAction
-	title="Speak directly to your data."
-	subtitle="Artificial Intelligence-driven data analysis at your fingertips."
+	title="Ready to Skyrocket Your Videos?"
+	subtitle="Leave us your email to experience the magic for yourself!"
 	{isMobile}
 />
 

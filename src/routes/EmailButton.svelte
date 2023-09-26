@@ -5,7 +5,6 @@
 
 	let message = '';
 	let isEmailValid = false;
-	let isPopupVisible = false;
 	let buttonText = 'Request A Demo';
 
 	const handleSubmit = async () => {
