@@ -25,7 +25,7 @@
 					headers: {
 						'Content-Type': 'application/json'
 					},
-					body: JSON.stringify({ name: 'testing1' }) // Modify the data as needed
+					body: JSON.stringify({ name: 'gotcha' }) // Modify the data as needed
 				});
 
 				if (response.ok) {
