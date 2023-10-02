@@ -5,7 +5,7 @@
 
 	let message = '';
 	let isEmailValid = false;
-	let buttonText = 'Request A Demo';
+	let buttonText = 'Join Waitlist';
 
 	const handleSubmit = async () => {
 		try {
@@ -23,12 +23,12 @@
 				email = '';
 				// isPopupVisible = true;
 				isEmailValid = false;
-				buttonText = 'Request A Demo';
+				buttonText = 'Join Waitlist';
 				alert('Your email was sent successfully!');
 			} else {
 				// Handle error cases
 				console.error('POST request failed');
-				buttonText = 'Request A Demo';
+				buttonText = 'Join Waitlist';
 				isEmailValid = false;
 				alert("Can't send the email, please try again later.");
 			}
@@ -67,58 +67,46 @@
 			bind:value={email}
 			on:input={validateEmail}
 			class="email-input"
-			placeholder="example@mail.com"
+			placeholder="Email address..."
 		/>
 		<button
-			class="emailbutton {isEmailValid ? '' : 'inactive'}"
+			class="email-button {isEmailValid ? '' : 'inactive'}"
 			on:click={isEmailValid ? handleSubmit : doNothing}>{buttonText}</button
 		>
 	</div>
 {/if}
 
 <style>
-	.emailcontainer.mobile {
-		display: flex;
-		flex-direction: column;
-		background-color: black;
-		border-radius: 16px;
-	}
-	.emailcontainer {
-		display: inline-block;
-		/* flex-direction: row; */
-		background-color: black;
-		border-radius: 16px;
+	.email-input {
+		font-family: 'Rubik', sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 1.5rem;
+		background-color: #fff;
+        color: #222;
+		padding: 16px;
+		margin-right: 24px;
+		border-radius: 12px;
+		border: 1px solid rgba(0, 0, 0, 0.25);
+        width: 30rem;
 	}
 
-	.emailbutton {
-		padding: 10px 24px;
-		background-color: white;
-		font-weight: 500;
-		font-size: 1.2rem;
-		min-width: 13rem;
+	.email-input::placeholder {
 		font-family: 'Rubik', sans-serif;
-		color: black;
+		font-weight: 300;
+		color: rgba(0, 0, 0, 0.35); /* Optionally change the color of the placeholder text */
+	}
+
+	.email-button {
+		padding: 1rem 3.5rem;
+		background-color: var(--color-theme-2);
+		font-weight: 500;
+		font-size: 1.5rem;
+		font-family: 'Rubik', sans-serif;
+		color: #fff;
 		border: none;
 		border-radius: 12px;
-		margin: 16px;
 		/* margin-left: 10px; */
 		cursor: pointer;
-	}
-
-	.emailbutton.inactive {
-		cursor: not-allowed; /* Change cursor to not-allowed */
-		opacity: 0.6; /* Reduce opacity to indicate inactivity */
-	}
-
-	/* Style for the email input */
-	.email-input {
-		padding: 24px;
-		/* border: 1px solid #ccc; */
-		background-color: black;
-		border: none;
-		color: white;
-		border-radius: 12px;
-		font-size: 1.2rem;
-		font-family: 'Rubik', sans-serif;
 	}
 </style>

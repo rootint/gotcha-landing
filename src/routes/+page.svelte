@@ -2,6 +2,7 @@
 	import { NAME } from '../constants';
 	import { DESCRIPTION } from '../constants';
 	import CallToAction from './CallToAction.svelte';
+	import Cards from './Cards.svelte';
 	import Features1 from './Features1.svelte';
 	import Hero1 from './Hero1.svelte';
 
@@ -54,30 +55,58 @@
 </svelte:head>
 
 <Hero1
-	title="Get Reels viral now"
-	subtitle="Elevate your videos with GotchaBack. Upload, get feedback, and watch them go viral!"
+	title="Edit your talking head videos effortlessly🪄"
+	subtitle="AI-generated captions, effects, and even deepfakes!"
 	{isMobile}
 />
 
+<Cards {isMobile} />
+
 <Features1
-	title="Instant Virality Predictions"
-	subtitle="With Gotcha, you can unlock instant predictions using the power of AI. Wondering if your video will go viral? Gotcha's AI can instantly check and let you know. Don't wait for success – predict it with Gotcha!"
+	title="Edit your videos in "
+	subtitle="Just upload your video to Gotcha, and we'll handle all the heavy lifting, including adding captions and effects, ensuring sound and color balance, and more!"
+	titleSpan="one click"
 	isImageOnRight={false}
-	imageSvg='viral.png'
+	imageSvg="title.png"
 	{isMobile}
 />
 
 <Features1
-	title="Refine Your Content with Actionable Insights"
-	subtitle="At Gotcha, we go beyond predicting virality; we're here to help you improve your content. Our GotchaBack bot can provide invaluable feedback to make your videos blow up on social platforms."
+	title="See your most frequent "
+	subtitle="With Gotcha, you have access to AI-powered feedback that points out how to make your videos even better."
+    titleSpan="mistakes"
 	isImageOnRight={true}
-	imageSvg='insights.png'
+	imageSvg="insights.png"
 	{isMobile}
 />
+
+<!-- <Features1
+	title="Deepfakes for virality"
+	subtitle="We change stuff in video using deepfakes to make the content more engaging."
+	isImageOnRight={true}
+	imageSvg="insights.png"
+	{isMobile}
+/>
+
+<Features1
+	title="Deepfakes something "
+	subtitle="Can be optimized for different platforms, tiktok for experiments or reels for refined content"
+	isImageOnRight={true}
+	imageSvg="insights.png"
+	{isMobile}
+/>
+
+<Features1
+	title="Feedback / Statistics"
+	subtitle="Get your most common mistakes and see how your videos become better."
+	isImageOnRight={true}
+	imageSvg="insights.png"
+	{isMobile}
+/> -->
 
 <CallToAction
 	title="Ready to Skyrocket Your Videos?"
-	subtitle="Leave us your email to experience the magic for yourself!"
+	subtitle="Sign up now and edit 3 free videos with Gotcha!"
 	{isMobile}
 />
 

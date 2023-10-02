@@ -3,6 +3,7 @@
 	import './styles.css';
 </script>
 
+<div class="circle" />
 <header>
 	<nav>
 		<div class="logo">
@@ -10,7 +11,7 @@
 				<defs>
 					<style>
 						.cls-1 {
-							fill: #fff;
+							fill: #222;
 						}
 					</style>
 				</defs>
@@ -23,19 +24,61 @@
 					</g>
 				</g>
 			</svg>
-			<div style="width: 12px" />
+			<div style="width: 8px" />
 			<p>{NAME}</p>
 		</div>
-		<h4>Home</h4>
+		<div class="back">
+			<h4>Home</h4>
+			<div style="width: 3rem" />
+			<h4>Pricing</h4>
+			<div style="width: 3rem" />
+			<button class="header-button">Join Waitlist</button>
+		</div>
 		<!-- <a class="button-nav" href="https://forms.gle/UBCinUCT8mbeWmwr6">Request A Demo</a> -->
 	</nav>
 </header>
 
 <style>
+	.circle {
+		width: 654px; /* Adjust the size of the circle as needed */
+		height: 654px; /* Adjust the size of the circle as needed */
+		background-color: var(--color-theme-3); /* Set the background color of the circle */
+		border-radius: 50%; /* Makes the element a circle */
+		position: absolute;
+		top: -650px;
+		left: 50%;
+		transform: translateX(-50%); /* Center the circle horizontally */
+		filter: blur(200px); 
+		z-index: -1;
+	}
+
+	.header-button {
+		padding: 0.75rem 2.5rem;
+		background-color: var(--color-theme-2);
+		font-weight: 500;
+		font-size: 1.25rem;
+		font-family: 'Rubik', sans-serif;
+		color: #fff;
+		border: none;
+		border-radius: 12px;
+		/* margin-left: 10px; */
+		cursor: pointer;
+	}
+	.back {
+		display: flex;
+		align-items: center;
+	}
+	h4 {
+		font-family: 'Rubik', sans-serif;
+		font-weight: 500;
+		font-size: 1.25rem;
+		color: var(--color-text);
+		z-index: 1;
+	}
 	.logo p {
 		font-family: 'Rubik', sans-serif;
 		font-weight: 500;
-		font-size: 1rem;
+		font-size: 1.25rem;
 		color: var(--color-text);
 	}
 	.logo {
@@ -44,8 +87,8 @@
 	}
 	.logo svg {
 		/* Customize logo SVG styles here */
-		width: 24px; /* Adjust the size as needed */
-		height: 24px;
+		width: 22px; /* Adjust the size as needed */
+		height: 19px;
 		/* Add any other SVG styling here */
 	}
 	.button-nav {
@@ -68,6 +111,7 @@
 		justify-content: space-between;
 		align-items: center;
 		margin: 0 0;
+        padding-top: 12px;
 	}
 	/* nav {
 		color: #fff;

@@ -7,6 +7,7 @@
 	// export let imageUrl: string;
 	export let isMobile: boolean;
 	export let imageSvg: string;
+	export let titleSpan: string;
 </script>
 
 {#if isMobile}
@@ -16,47 +17,79 @@
 			<h4>{subtitle}</h4>
 		</div>
 		<div style="height: 40px" />
-		<img src={imageSvg} alt="Feature screenshot" width="90%"/>
+		<img src={imageSvg} alt="Feature screenshot" width="90%" />
 	</section>
 {:else}
 	<section>
 		{#if isImageOnRight}
 			<div class="featurestext">
-				<h3>{title}</h3>
+				<h3>
+					{title}
+					<span style="color: var(--color-theme-2);">{titleSpan}</span>
+				</h3>
 				<h4>{subtitle}</h4>
 			</div>
 			<div class="centerpadding" />
 			<div class="featuresimage">
-				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;"/>
+				<div class="circle-blue" />
+				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;" />
 			</div>
 		{:else}
 			<!-- <div class="featuresimage"> -->
 			<div class="featuresimage">
-				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;"/>
+				<div class="circle-red" />
+				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;" />
 			</div>
 			<div class="centerpadding" />
 			<div class="featurestext">
-				<h3>{title}</h3>
+				<h3>
+					{title}
+					<span style="color: var(--color-theme-1);">{titleSpan}</span>
+				</h3>
 				<h4>{subtitle}</h4>
 			</div>
 		{/if}
 	</section>
+	<div style="height: 13rem" />
 {/if}
 
 <style>
-	.svgcontainer svg {
-		width: 150px;
-		height: 150px;
-		/* width: 100%;
-		height: 100%; */
-		z-index: 1; /* Place the SVG above other content */
+	.circle-red {
+		width: 654px; /* Adjust the size of the circle as needed */
+		height: 654px; /* Adjust the size of the circle as needed */
+		background-color: var(--color-theme-2); /* Set the background color of the circle */
+		border-radius: 50%; /* Makes the element a circle */
+		position: absolute;
+		left: -100%;
+		filter: blur(200px);
+		z-index: -1;
+	}
+	.circle-blue {
+		width: 654px; /* Adjust the size of the circle as needed */
+		height: 654px; /* Adjust the size of the circle as needed */
+		background-color: var(--color-theme-1); /* Set the background color of the circle */
+		border-radius: 50%; /* Makes the element a circle */
+		position: absolute;
+		right: -100%;
+		filter: blur(200px);
+		z-index: -1;
+	}
+	h4 {
+		font-family: 'Rubik', sans-serif;
+		font-weight: 400;
+		font-size: 2.5rem;
+		color: var(--color-text);
+	}
+	h3 {
+		font-family: 'Rubik', sans-serif;
+		font-weight: 500;
+		font-size: 4rem;
+		color: var(--color-text);
 	}
 
 	section {
-		padding: 10% 0;
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		align-items: left;
 		margin: 0;
 		width: 100%;
 	}
