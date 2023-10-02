@@ -6,21 +6,41 @@
 	export let title: string;
 	export let subtitle: string;
 	export let isMobile: boolean;
+	import Youtube from 'svelte-youtube-embed';
 </script>
 
 {#if isMobile}
 	<section class="mobile">
-		<h1 class="mobile" style="margin-bottom: 0;">
-			<div class="herotext">
-				<h1>Edit your talking head videos effortlessly🪄</h1>
+		<div style="height: 14rem" />
+		<h1 class="hero">
+			Edit <div id="svg-container">
+				<img src="strike.svg" alt="" />
 			</div>
+			your talking head<br />videos
+			<span style="color: var(--color-theme-1);">effortlessly</span>🪄
 		</h1>
-		<h2 class="mobile" style="margin-top: 0;">{subtitle}</h2>
-		<div style="height: 40px" />
-		<!-- <a class="button mobile" href="https://forms.gle/UBCinUCT8mbeWmwr6">Request A Demo</a> -->
+
+		<div style="height: 2rem" />
+		<h2 class="hero">{subtitle}</h2>
+		<div style="height: 4rem" />
 		<EmailButton {isMobile} />
-		<div style="height: 40px" />
-		<img src="title.png" alt="heroimage" class="herofgimage mobile" />
+		<!-- <div class="heroimage"> -->
+		<div style="height: 6rem" />
+		<div class="aspect-ratio">
+			<div class="circle-blue" />
+			<div class="circle-red" />
+			<!-- <iframe
+				width="550"
+				height="275"
+				style="border-radius: 12px;"
+				src="https://www.youtube.com/embed/8DPrtJ_e2rk?si=h-uYcRaeRyLA2QAk"
+				title="YouTube video player"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
+			/> -->
+			<Youtube id="q2Y3f0lHnMs" />
+		</div>
+		<div style="height: 4rem" />
 	</section>
 {:else}
 	<section class="desktop">
@@ -42,7 +62,7 @@
 		<div class="aspect-ratio">
 			<div class="circle-blue" />
 			<div class="circle-red" />
-			<iframe
+			<!-- <iframe
 				width="550"
 				height="275"
 				style="border-radius: 12px;"
@@ -50,7 +70,8 @@
 				title="YouTube video player"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen
-			/>
+			/> -->
+			<Youtube id="8DPrtJ_e2rk"/>
 		</div>
 		<div style="height: 4rem" />
 		<!-- <p class="background" />
@@ -66,6 +87,14 @@
 {/if}
 
 <style>
+	section.mobile {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		width: 100%;
+	}
 	.circle-blue {
 		width: 654px; /* Adjust the size of the circle as needed */
 		height: 654px; /* Adjust the size of the circle as needed */
@@ -140,14 +169,6 @@
 		margin: 0;
 	}
 
-	img.mobile {
-		width: 100%;
-	}
-	.scroll-text {
-		animation: changeWord 2s ease-in infinite;
-		color: black;
-	}
-
 	@keyframes changeWord {
 		0% {
 			opacity: 0;
@@ -169,56 +190,5 @@
 		align-items: center;
 		margin: 0;
 		width: 100%;
-	}
-
-	p {
-		margin: 0;
-		padding: 0;
-	}
-
-	.herotext {
-		flex: 0.5;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.heroimage {
-		/* position: relative; */
-		height: 50vh;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.herofgimage {
-		width: 100%;
-		border-radius: 16px;
-		z-index: 1;
-		animation: fade-in 1s ease-out;
-	}
-
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	.background {
-		width: 70%;
-		aspect-ratio: 1/1;
-		border-radius: 16px;
-		background: linear-gradient(to bottom right, var(--color-theme-2), var(--color-theme-1));
-		filter: blur(120px);
 	}
 </style>
