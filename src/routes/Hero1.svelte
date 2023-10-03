@@ -11,36 +11,27 @@
 
 {#if isMobile}
 	<section class="mobile">
-		<div style="height: 14rem" />
-		<h1 class="hero">
-			Edit <div id="svg-container">
+		<div style="height: 6rem" />
+		<h1 class="hero mobile">
+			Edit
+			<!-- <div id="svg-container">
 				<img src="strike.svg" alt="" />
-			</div>
-			your talking head<br />videos
+			</div> -->
+			your talking head videos
 			<span style="color: var(--color-theme-1);">effortlessly</span>🪄
 		</h1>
 
 		<div style="height: 2rem" />
-		<h2 class="hero">{subtitle}</h2>
-		<div style="height: 4rem" />
+		<h2 class="hero mobile">{subtitle}</h2>
+		<div style="height: 2rem" />
 		<EmailButton {isMobile} />
-		<!-- <div class="heroimage"> -->
-		<div style="height: 6rem" />
+		<div style="height: 2rem" />
 		<div class="aspect-ratio">
-			<div class="circle-blue" />
-			<div class="circle-red" />
-			<!-- <iframe
-				width="550"
-				height="275"
-				style="border-radius: 12px;"
-				src="https://www.youtube.com/embed/8DPrtJ_e2rk?si=h-uYcRaeRyLA2QAk"
-				title="YouTube video player"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowfullscreen
-			/> -->
-			<Youtube id="q2Y3f0lHnMs" />
+			<!-- <div class="circle-blue" />
+			<div class="circle-red" /> -->
+			<Youtube id="8DPrtJ_e2rk" />
 		</div>
-		<div style="height: 4rem" />
+		<div style="height: 1rem" />
 	</section>
 {:else}
 	<section class="desktop">
@@ -71,7 +62,7 @@
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen
 			/> -->
-			<Youtube id="8DPrtJ_e2rk"/>
+			<Youtube id="8DPrtJ_e2rk" />
 		</div>
 		<div style="height: 4rem" />
 		<!-- <p class="background" />
@@ -87,14 +78,6 @@
 {/if}
 
 <style>
-	section.mobile {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin: 0;
-		width: 100%;
-	}
 	.circle-blue {
 		width: 654px; /* Adjust the size of the circle as needed */
 		height: 654px; /* Adjust the size of the circle as needed */
@@ -103,8 +86,9 @@
 		position: absolute;
 		left: 30%;
 		top: 60px;
-		transform: translateX(-50%); /* Center the circle horizontally */
+		/* transform: translateX(-50%);  */
 		filter: blur(200px);
+        transform: translate3d(-50%, 0, 0);
 		z-index: -1;
 	}
 	.circle-red {
@@ -115,8 +99,10 @@
 		position: absolute;
 		left: 80%;
 		top: 60px;
-		transform: translateX(-70%); /* Center the circle horizontally */
+		/* transform: translateX(-70%);  */
 		filter: blur(200px);
+        /* transform: translate3d(0, 0, 0); */
+        transform: translate3d(-70%, 0, 0);
 		z-index: -1;
 	}
 	.aspect-ratio {
@@ -124,14 +110,6 @@
 		width: 100%;
 		height: 0;
 		padding-bottom: 56%; /* The height of the item will now be 56% of the width. */
-	}
-
-	.aspect-ratio iframe {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
 	}
 	#svg-container {
 		position: absolute;
@@ -158,7 +136,15 @@
 		text-align: center;
 		margin: 0;
 	}
-
+	h1.hero.mobile {
+		font-family: 'Rubik', sans-serif;
+		font-weight: 500;
+		font-size: 2.5rem;
+		color: var(--color-text);
+		z-index: 1;
+		text-align: center;
+		margin: 0;
+	}
 	h2.hero {
 		font-family: 'Rubik', sans-serif;
 		font-weight: 400;
@@ -168,20 +154,14 @@
 		text-align: center;
 		margin: 0;
 	}
-
-	@keyframes changeWord {
-		0% {
-			opacity: 0;
-		}
-		33.33% {
-			opacity: 1;
-		}
-		66.66% {
-			opacity: 1;
-		}
-		100% {
-			opacity: 0;
-		}
+	h2.hero.mobile {
+		font-family: 'Rubik', sans-serif;
+		font-weight: 400;
+		font-size: 1.5rem;
+		color: var(--color-text);
+		z-index: 1;
+		text-align: center;
+		margin: 0;
 	}
 	section.desktop {
 		display: flex;

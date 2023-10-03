@@ -3,6 +3,7 @@
 	import './styles.css';
 </script>
 
+<!-- TODO: Mobile! -->
 <div class="circle" />
 <header>
 	<nav>
@@ -47,10 +48,12 @@
 		position: absolute;
 		top: -650px;
 		left: 50%;
-		transform: translateX(-50%); /* Center the circle horizontally */
+		/* transform: translateX(-50%);  */
+        transform: translate3d(-50%, 0, 0);
 		filter: blur(200px); 
 		z-index: -1;
 	}
+
 
 	.header-button {
 		padding: 0.75rem 2.5rem;

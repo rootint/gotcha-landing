@@ -52,12 +52,12 @@
 			type="email"
 			bind:value={email}
 			on:input={validateEmail}
-			class="email-input"
-			placeholder="example@mail.com"
+			class="email-input mobile"
+			placeholder="Email address..."
 		/>
-		<button
-			class="emailbutton {isEmailValid ? '' : 'inactive'}"
-			on:click={isEmailValid ? handleSubmit : doNothing}>{buttonText}</button
+		<div style="height: 16px" />
+		<button class="email-button mobile" on:click={isEmailValid ? handleSubmit : doNothing}
+			>{buttonText}</button
 		>
 	</div>
 {:else}
@@ -69,26 +69,44 @@
 			class="email-input"
 			placeholder="Email address..."
 		/>
-		<button
-			class="email-button {isEmailValid ? '' : 'inactive'}"
-			on:click={isEmailValid ? handleSubmit : doNothing}>{buttonText}</button
+		<button class="email-button" on:click={isEmailValid ? handleSubmit : doNothing}
+			>{buttonText}</button
 		>
 	</div>
 {/if}
 
 <style>
+	.emailcontainer.mobile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 	.email-input {
 		font-family: 'Rubik', sans-serif;
 		font-weight: 400;
 		font-style: normal;
 		font-size: 1.5rem;
 		background-color: #fff;
-        color: #222;
+		color: #222;
 		padding: 16px;
 		margin-right: 24px;
 		border-radius: 12px;
 		border: 1px solid rgba(0, 0, 0, 0.25);
-        width: 30rem;
+		width: 30rem;
+	}
+
+	.email-input.mobile {
+		font-family: 'Rubik', sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 1rem;
+		background-color: #fff;
+		color: #222;
+		padding: 16px;
+		margin-right: 0px;
+		border-radius: 12px;
+		border: 1px solid rgba(0, 0, 0, 0.25);
+		width: 100%;
 	}
 
 	.email-input::placeholder {
@@ -107,6 +125,18 @@
 		border: none;
 		border-radius: 12px;
 		/* margin-left: 10px; */
+		cursor: pointer;
+	}
+    .email-button.mobile {
+		/* padding: 1rem 3.5rem; */
+		background-color: var(--color-theme-2);
+		font-weight: 500;
+		font-size: 1.2rem;
+		font-family: 'Rubik', sans-serif;
+		color: #fff;
+		border: none;
+		border-radius: 12px;
+        width: 100%;
 		cursor: pointer;
 	}
 </style>

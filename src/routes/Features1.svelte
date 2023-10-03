@@ -62,6 +62,7 @@
 		position: absolute;
 		left: -100%;
 		filter: blur(200px);
+        transform: translate3d(0, 0, 0);
 		z-index: -1;
 	}
 	.circle-blue {
@@ -72,6 +73,7 @@
 		position: absolute;
 		right: -100%;
 		filter: blur(200px);
+        transform: translate3d(0, 0, 0);
 		z-index: -1;
 	}
 	h4 {

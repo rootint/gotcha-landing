@@ -74,35 +74,11 @@
 <Features1
 	title="See your most frequent "
 	subtitle="With Gotcha, you have access to AI-powered feedback that points out how to make your videos even better."
-    titleSpan="mistakes"
+	titleSpan="mistakes"
 	isImageOnRight={true}
 	imageSvg="insights.png"
 	{isMobile}
 />
-
-<!-- <Features1
-	title="Deepfakes for virality"
-	subtitle="We change stuff in video using deepfakes to make the content more engaging."
-	isImageOnRight={true}
-	imageSvg="insights.png"
-	{isMobile}
-/>
-
-<Features1
-	title="Deepfakes something "
-	subtitle="Can be optimized for different platforms, tiktok for experiments or reels for refined content"
-	isImageOnRight={true}
-	imageSvg="insights.png"
-	{isMobile}
-/>
-
-<Features1
-	title="Feedback / Statistics"
-	subtitle="Get your most common mistakes and see how your videos become better."
-	isImageOnRight={true}
-	imageSvg="insights.png"
-	{isMobile}
-/> -->
 
 <CallToAction
 	title="Ready to Skyrocket Your Videos?"
