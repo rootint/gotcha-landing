@@ -31,13 +31,13 @@
 			</div>
 			<div class="centerpadding" />
 			<div class="featuresimage">
-				<div class="circle-blue" />
+				<!-- <div class="circle-blue" /> -->
 				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;" />
 			</div>
 		{:else}
 			<!-- <div class="featuresimage"> -->
 			<div class="featuresimage">
-				<div class="circle-red" />
+				<!-- <div class="circle-red" /> -->
 				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;" />
 			</div>
 			<div class="centerpadding" />

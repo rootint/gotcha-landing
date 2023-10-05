@@ -51,8 +51,8 @@
 		<!-- <div class="heroimage"> -->
 		<div style="height: 6rem" />
 		<div class="aspect-ratio">
-			<div class="circle-blue" />
-			<div class="circle-red" />
+			<!-- <div class="circle-blue" />
+			<div class="circle-red" /> -->
 			<!-- <iframe
 				width="550"
 				height="275"
@@ -164,6 +164,14 @@
 		margin: 0;
 	}
 	section.desktop {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		width: 100%;
+	}
+    section.mobile {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

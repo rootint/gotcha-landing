@@ -4,7 +4,7 @@
 </script>
 
 <!-- TODO: Mobile! -->
-<div class="circle" />
+<!-- <div class="circle" /> -->
 <header>
 	<nav>
 		<div class="logo">
@@ -41,19 +41,34 @@
 
 <style>
 	.circle {
-		width: 654px; /* Adjust the size of the circle as needed */
-		height: 654px; /* Adjust the size of the circle as needed */
+		width: 654px;
+		height: 654px;
 		background-color: var(--color-theme-3); /* Set the background color of the circle */
 		border-radius: 50%; /* Makes the element a circle */
 		position: absolute;
 		top: -650px;
 		left: 50%;
 		/* transform: translateX(-50%);  */
-        transform: translate3d(-50%, 0, 0);
-		filter: blur(200px); 
+		transform: translate3d(-50%, 0, 0);
+		filter: blur(200px);
 		z-index: -1;
 	}
 
+	@media (max-width: 768px) {
+		.circle {
+			width: 300px;
+			height: 300px;
+			background-color: var(--color-theme-3); /* Set the background color of the circle */
+			border-radius: 50%; /* Makes the element a circle */
+			position: absolute;
+			top: -300px;
+			left: 50%;
+			/* transform: translateX(-50%);  */
+			transform: translate3d(-50%, 0, 0);
+			filter: blur(200px);
+			z-index: -1;
+		}
+	}
 
 	.header-button {
 		padding: 0.75rem 2.5rem;
@@ -100,6 +115,6 @@
 		justify-content: space-between;
 		align-items: center;
 		margin: 0 0;
-        padding-top: 12px;
+		padding-top: 12px;
 	}
 </style>
