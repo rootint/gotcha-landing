@@ -31,13 +31,13 @@
 			</div>
 			<div class="centerpadding" />
 			<div class="featuresimage">
-				<!-- <div class="circle-blue" /> -->
 				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;" />
 			</div>
+			<div class="circle-blue" />
 		{:else}
 			<!-- <div class="featuresimage"> -->
+			<div class="circle-red" />
 			<div class="featuresimage">
-				<!-- <div class="circle-red" /> -->
 				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;" />
 			</div>
 			<div class="centerpadding" />
@@ -55,26 +55,32 @@
 
 <style>
 	.circle-red {
-		width: 654px; /* Adjust the size of the circle as needed */
-		height: 654px; /* Adjust the size of the circle as needed */
-		background-color: var(--color-theme-2); /* Set the background color of the circle */
+		width: 30%;
+		aspect-ratio: 1;
+		background-color: var(--color-theme-2-50); /* Set the background color of the circle */
 		border-radius: 50%; /* Makes the element a circle */
 		position: absolute;
-		left: -100%;
-		filter: blur(200px);
-        transform: translate3d(0, 0, 0);
+        left: 0;
+		/* left: 30%;
+		top: 60px; */
+		/* transform: translateX(-50%);  */
+		filter: blur(50px);
+		transform: translate3d(-90%, -10%, 0);
 		z-index: -1;
 	}
 	.circle-blue {
-		width: 654px; /* Adjust the size of the circle as needed */
-		height: 654px; /* Adjust the size of the circle as needed */
-		background-color: var(--color-theme-1); /* Set the background color of the circle */
+		width: 30%;
+		aspect-ratio: 1;
+		background-color: var(--color-theme-1-50); /* Set the background color of the circle */
 		border-radius: 50%; /* Makes the element a circle */
 		position: absolute;
-		right: -100%;
-		filter: blur(200px);
-        transform: translate3d(0, 0, 0);
-		z-index: -1;
+        right: 0;
+		/* left: 30%;
+		top: 60px; */
+		/* transform: translateX(-50%);  */
+		filter: blur(50px);
+		transform: translate3d(90%, -10%, 0);
+		z-index: 2;
 	}
 	h4 {
 		font-family: 'Rubik', sans-serif;

@@ -7,8 +7,11 @@
 	--color-theme-1: #454ade;
 	--color-theme-2: #f64740; */
 	--color-theme-1: #454ade;
+	--color-theme-1-50: rgba(69, 74, 222, 0.5);
 	--color-theme-2: #de454a;
+	--color-theme-2-50: rgba(222, 69, 74, 0.5);
 	--color-theme-3: #4ade45;
+	--color-theme-3-50: rgba(74, 222, 69, 0.5);
 	--color-text: #222;
 	--background-color: #fafafa;
 	/* --column-width: 42rem;
@@ -109,7 +112,7 @@ body {
 	background: var(--background-color);
 	margin: 0;
 	padding: 0;
-  overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 .centerpadding {
@@ -125,5 +128,5 @@ main {
 html {
 	padding: 0 !important;
 	margin: 0;
-  overflow-x: hidden;
+	overflow-x: hidden;
 }

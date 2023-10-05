@@ -4,7 +4,7 @@
 </script>
 
 <!-- TODO: Mobile! -->
-<!-- <div class="circle" /> -->
+<div class="circle" />
 <header>
 	<nav>
 		<div class="logo">
@@ -43,29 +43,35 @@
 	.circle {
 		width: 654px;
 		height: 654px;
-		background-color: var(--color-theme-3); /* Set the background color of the circle */
-		border-radius: 50%; /* Makes the element a circle */
+		/* background-color: var(--color-theme-3);  */
+		background-color: var(--color-theme-3-50);
+		border-radius: 50%;
 		position: absolute;
-		top: -650px;
-		left: 50%;
-		/* transform: translateX(-50%);  */
-		transform: translate3d(-50%, 0, 0);
-		filter: blur(200px);
+		/* transform: translate3d(0, 0, 0); */
+		/* display: flex;
+        justify-content: center;
+        justify-self: center; */
+        left: 50%;
+		transform: translate3d(-50%, -85%, 0); 
+		/* transform: translate3d(50%, -100%, 0); */
+		filter: blur(50px);
 		z-index: -1;
 	}
 
 	@media (max-width: 768px) {
 		.circle {
-			width: 300px;
-			height: 300px;
+			width: 150px;
+			height: 150px;
 			background-color: var(--color-theme-3); /* Set the background color of the circle */
 			border-radius: 50%; /* Makes the element a circle */
 			position: absolute;
-			top: -300px;
-			left: 50%;
+			/* top: -300px;
+			left: 50%; */
+			/* left: 50%; */
 			/* transform: translateX(-50%);  */
-			transform: translate3d(-50%, 0, 0);
-			filter: blur(200px);
+			/* transform: translate3d(0, -100%, 0); */
+			/* transform: translate3d(50%, 0, 0); */
+			/* filter: blur(200px); */
 			z-index: -1;
 		}
 	}

@@ -51,8 +51,8 @@
 		<!-- <div class="heroimage"> -->
 		<div style="height: 6rem" />
 		<div class="aspect-ratio">
-			<!-- <div class="circle-blue" />
-			<div class="circle-red" /> -->
+			<div class="circle-blue" />
+			<div class="circle-red" />
 			<!-- <iframe
 				width="550"
 				height="275"
@@ -79,30 +79,30 @@
 
 <style>
 	.circle-blue {
-		width: 654px; /* Adjust the size of the circle as needed */
-		height: 654px; /* Adjust the size of the circle as needed */
-		background-color: var(--color-theme-1); /* Set the background color of the circle */
+		width: 650px;
+		height: 650px;
+		background-color: var(--color-theme-1-50); /* Set the background color of the circle */
 		border-radius: 50%; /* Makes the element a circle */
 		position: absolute;
-		left: 30%;
-		top: 60px;
+		left: 50%;
+		/* left: 30%;
+		top: 60px; */
 		/* transform: translateX(-50%);  */
-		filter: blur(200px);
-        transform: translate3d(-50%, 0, 0);
+		filter: blur(50px);
+		transform: translate3d(-85%, -10%, 0);
 		z-index: -1;
 	}
 	.circle-red {
-		width: 654px; /* Adjust the size of the circle as needed */
-		height: 654px; /* Adjust the size of the circle as needed */
-		background-color: var(--color-theme-2); /* Set the background color of the circle */
+		width: 650px; /* Adjust the size of the circle as needed */
+		height: 650px; /* Adjust the size of the circle as needed */
+		background-color: var(--color-theme-2-50); /* Set the background color of the circle */
 		border-radius: 50%; /* Makes the element a circle */
 		position: absolute;
-		left: 80%;
-		top: 60px;
+		left: 50%;
 		/* transform: translateX(-70%);  */
-		filter: blur(200px);
-        /* transform: translate3d(0, 0, 0); */
-        transform: translate3d(-70%, 0, 0);
+		filter: blur(50px);
+		/* transform: translate3d(0, 0, 0); */
+		transform: translate3d(-15%, -10%, 0);
 		z-index: -1;
 	}
 	.aspect-ratio {
@@ -171,7 +171,7 @@
 		margin: 0;
 		width: 100%;
 	}
-    section.mobile {
+	section.mobile {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
