@@ -4,7 +4,7 @@
 </script>
 
 <!-- TODO: Mobile! -->
-<div class="circle" />
+<!-- <div class="circle" /> -->
 <header>
 	<nav>
 		<div class="logo">
@@ -29,7 +29,7 @@
 			<p>{NAME}</p>
 		</div>
 		<div class="back">
-			<h4>Home</h4>
+			<h4 id="mobile-check">Home</h4>
 			<div style="width: 3rem" />
 			<!-- <h4>Pricing</h4> -->
 			<!-- <div style="width: 3rem" /> -->
@@ -40,6 +40,16 @@
 </header>
 
 <style>
+	@media screen and (max-width: 768px) {
+		#mobile-check {
+			visibility: hidden;
+			clear: both;
+			float: left;
+			margin: 10px auto 5px 20px;
+			width: 28%;
+			display: none;
+		}
+	}
 	.circle {
 		width: 654px;
 		height: 654px;
@@ -51,8 +61,8 @@
 		/* display: flex;
         justify-content: center;
         justify-self: center; */
-        left: 50%;
-		transform: translate3d(-50%, -85%, 0); 
+		left: 50%;
+		transform: translate3d(-50%, -85%, 0);
 		/* transform: translate3d(50%, -100%, 0); */
 		filter: blur(50px);
 		z-index: -1;
@@ -87,6 +97,20 @@
 		border-radius: 12px;
 		/* margin-left: 10px; */
 		cursor: pointer;
+	}
+	@media (max-width: 768px) {
+		.header-button {
+			padding: 1rem 1.25rem;
+			background-color: var(--color-theme-2);
+			font-weight: 500;
+			font-size: 1rem;
+			font-family: 'Rubik', sans-serif;
+			color: #fff;
+			border: none;
+			border-radius: 12px;
+			/* margin-left: 10px; */
+			cursor: pointer;
+		}
 	}
 	.back {
 		display: flex;

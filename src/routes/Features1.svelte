@@ -13,8 +13,11 @@
 {#if isMobile}
 	<section class="mobile">
 		<div class="featurestext">
-			<h3>{title}</h3>
-			<h4>{subtitle}</h4>
+			<h3 class="mobile">
+				{title}
+				<span style="color: var(--color-theme-2);">{titleSpan}</span>
+			</h3>
+			<h4 class="mobile">{subtitle}</h4>
 		</div>
 		<div style="height: 40px" />
 		<img src={imageSvg} alt="Feature screenshot" width="90%" />
@@ -33,10 +36,10 @@
 			<div class="featuresimage">
 				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;" />
 			</div>
-			<div class="circle-blue" />
+			<!-- <div class="circle-blue" /> -->
 		{:else}
 			<!-- <div class="featuresimage"> -->
-			<div class="circle-red" />
+			<!-- <div class="circle-red" /> -->
 			<div class="featuresimage">
 				<img src={imageSvg} alt="Feature screenshot" style="max-width: 90%;" />
 			</div>
@@ -60,7 +63,7 @@
 		background-color: var(--color-theme-2-50); /* Set the background color of the circle */
 		border-radius: 50%; /* Makes the element a circle */
 		position: absolute;
-        left: 0;
+		left: 0;
 		/* left: 30%;
 		top: 60px; */
 		/* transform: translateX(-50%);  */
@@ -74,7 +77,7 @@
 		background-color: var(--color-theme-1-50); /* Set the background color of the circle */
 		border-radius: 50%; /* Makes the element a circle */
 		position: absolute;
-        right: 0;
+		right: 0;
 		/* left: 30%;
 		top: 60px; */
 		/* transform: translateX(-50%);  */
@@ -95,9 +98,32 @@
 		color: var(--color-text);
 	}
 
+	h3.mobile {
+		font-family: 'Rubik', sans-serif;
+		font-weight: 500;
+		font-size: 3rem;
+		color: var(--color-text);
+        text-align: center;
+	}
+
+	h4.mobile {
+		font-family: 'Rubik', sans-serif;
+		font-weight: 400;
+		font-size: 1.5rem;
+		color: var(--color-text);
+        text-align: center;
+	}
+
 	section {
 		display: flex;
 		align-items: left;
+		margin: 0;
+		width: 100%;
+	}
+
+    section.mobile {
+		display: flex;
+		align-items: center;
 		margin: 0;
 		width: 100%;
 	}

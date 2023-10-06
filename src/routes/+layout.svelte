@@ -10,7 +10,7 @@
 		<slot />
 	</main>
 
-	<footer>
+	<footer id="mobile-check">
 		<div class="logo">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437.88 401.12">
 				<defs>
@@ -33,12 +33,34 @@
 			<p>{NAME}</p>
 		</div>
 		<div class="back">
-			<h4>Have questions? Contact us: danik.tim@gmail.com</h4>
+			<h4 id="mobile-check">Have questions? Contact us: danik.tim@gmail.com</h4>
 		</div>
 	</footer>
 </div>
 
 <style>
+	@media screen and (max-width: 768px) {
+		#mobile-check {
+			/* visibility: hidden;
+			clear: both;
+			float: left;
+			margin: 10px auto 5px 20px;
+			width: 28%;
+			display: none; */
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		#mobile-check {
+			font-family: 'Rubik', sans-serif;
+			font-weight: 400;
+			font-size: 1.25rem;
+			color: var(--color-text);
+			z-index: 1;
+            text-align: center;
+		}
+	}
 	h4 {
 		font-family: 'Rubik', sans-serif;
 		font-weight: 400;
